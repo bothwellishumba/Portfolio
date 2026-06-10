@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Bothwell I. Shumba | Advanced Analytics | Data Science | AI Engineer</title>
+
+<!-- Modern font stack (clean, corporate) -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --bg-corporate: #f5f7fc;
+    --surface-white: #ffffff;
+    --navy-dark: #0a2540;
+    --blue-corporate: #0066cc;
+    --blue-hover: #0052a3;
+    --blue-soft: #eef4ff;
+    --slate-text: #1e2f3e;
+    --gray-muted: #5c6f87;
+    --border-light: #e2e8f0;
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.03);
+    --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.03);
+    --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 20px 35px -8px rgba(0, 0, 0, 0.08);
+    --transition-default: all 0.2s ease;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg-corporate);
+    color: var(--slate-text);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.9rem 6%;
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-light);
+    z-index: 1000;
+  }
+
+  .logo {
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: var(--navy-dark);
+    letter-spacing: -0.3px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .logo i {
+    color: var(--blue-corporate);
+    font-size: 1.3rem;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav-links a {
+    color: var(--gray-muted);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: var(--transition-default);
+  }
+
+  .nav-links a:hover { color: var(--blue-corporate); }
+
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3.5rem 6% 2.5rem;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-text h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--navy-dark);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  .title-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--blue-soft);
+    color: var(--blue-corporate);
+    border-radius: 40px;
+    padding: 0.2rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    width: fit-content;
+    margin: 0.75rem 0 0.5rem;
+  }
+
+  .hero-text p {
+    margin-top: 0.75rem;
+    color: var(--gray-muted);
+    max-width: 540px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .btn-group {
+    margin-top: 1.8rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.6rem 1.3rem;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: var(--transition-default);
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-primary {
+    background: var(--blue-corporate);
+    color: white;
+    box-shadow: 0 2px 6px rgba(0, 102, 204, 0.2);
+  }
+
+  .btn-primary:hover {
+    background: var(--blue-hover);
+    transform: translateY(-1px);
+  }
+
+  .btn-outline {
+    background: transparent;
+    border: 1px solid var(--border-light);
+    color: var(--slate-text);
+  }
+
+  .btn-outline:hover {
+    background: var(--blue-soft);
+    border-color: var(--blue-corporate);
+  }
+
+  .hero-img img {
+    width: 100%;
+    max-width: 270px;
+    border-radius: 32px;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    box-shadow: var(--shadow-lg);
+    border: 3px solid white;
+  }
+
+  .contact-ribbon {
+    background: var(--surface-white);
+    margin: 0 6% 2rem;
+    border-radius: 60px;
+    padding: 0.7rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.8rem;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-xs);
+  }
+
+  .contact-chip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: var(--gray-muted);
+  }
+
+  .contact-chip i {
+    color: var(--blue-corporate);
+    width: 18px;
+    font-size: 0.85rem;
+  }
+
+  .email-action {
+    background: var(--blue-soft);
+    color: var(--blue-corporate);
+    padding: 0.3rem 1.1rem;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.1s;
+    border: none;
+  }
+
+  .email-action:hover { background: #e0eaff; }
+
+  section {
+    padding: 2.5rem 6%;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 1rem;
+  }
+
+  .section-header i {
+    font-size: 1.6rem;
+    color: var(--blue-corporate);
+  }
+
+  .section-title {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--navy-dark);
+    letter-spacing: -0.3px;
+  }
+
+  .section-divider {
+    width: 50px;
+    height: 3px;
+    background: var(--blue-corporate);
+    margin: 0.2rem 0 1.5rem;
+    border-radius: 3px;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.8rem;
+    margin-top: 1rem;
+  }
+
+  .project-card {
+    background: var(--surface-white);
+    border-radius: 24px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: var(--transition-default);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-xs);
+  }
+
+  .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--blue-corporate);
+  }
+
+  .project-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    background: var(--blue-soft);
+  }
+
+  .project-content {
+    padding: 1.2rem 1.2rem 1.3rem;
+  }
+
+  .project-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--navy-dark);
+    margin-bottom: 0.4rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .project-desc {
+    font-size: 0.82rem;
+    color: var(--gray-muted);
+    line-height: 1.45;
+    margin: 0.3rem 0 0.7rem;
+  }
+
+  .project-tech {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--blue-corporate);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .medium-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .medium-card {
+    background: var(--surface-white);
+    border-radius: 24px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: var(--transition-default);
+    border: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .medium-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--blue-corporate);
+  }
+
+  .medium-img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    background: #eef2f6;
+  }
+
+  .medium-content {
+    padding: 1rem 1.2rem 1.2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .medium-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--navy-dark);
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+  }
+
+  .medium-meta {
+    font-size: 0.65rem;
+    color: var(--gray-muted);
+    margin: 0 0 8px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .medium-excerpt {
+    font-size: 0.8rem;
+    color: var(--gray-muted);
+    line-height: 1.45;
+    margin-bottom: 0.8rem;
+    flex: 1;
+  }
+
+  .read-link {
+    margin-top: 6px;
+    font-weight: 600;
+    font-size: 0.7rem;
+    color: var(--blue-corporate);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    background: var(--surface-white);
+    border-radius: 32px;
+    margin-top: 1rem;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .loader {
+    border: 3px solid var(--border-light);
+    border-top: 3px solid var(--blue-corporate);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 0.8s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .error-message {
+    background: #fff0f0;
+    color: #cc3333;
+    padding: 1.5rem;
+    border-radius: 28px;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .info-message {
+    background: #eef4ff;
+    color: var(--blue-corporate);
+    padding: 1rem;
+    border-radius: 28px;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .cta-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8faff 100%);
+    border-radius: 32px;
+    padding: 1.8rem;
+    text-align: center;
+    border: 1px solid var(--border-light);
+    margin: 0.5rem 0 1rem;
+  }
+
+  .btn-cta {
+    background: var(--blue-corporate);
+    border: none;
+    padding: 0.65rem 1.8rem;
+    border-radius: 40px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    margin-top: 0.8rem;
+  }
+
+  footer {
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 1px solid var(--border-light);
+    color: var(--gray-muted);
+    background: white;
+    font-size: 0.75rem;
+  }
+
+  .pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .page-btn {
+    background: white;
+    border: 1px solid var(--border-light);
+    padding: 0.5rem 1rem;
+    border-radius: 40px;
+    font-weight: 500;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--slate-text);
+  }
+  
+  .page-btn.active {
+    background: var(--blue-corporate);
+    border-color: var(--blue-corporate);
+    color: white;
+  }
+  
+  .page-btn:hover:not(.active) {
+    background: var(--blue-soft);
+    border-color: var(--blue-corporate);
+  }
+  
+  .posts-counter {
+    font-size: 0.75rem;
+    color: var(--gray-muted);
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 700px) {
+    .hero-text h1 { font-size: 2.2rem; }
+    .contact-ribbon { flex-direction: column; align-items: stretch; border-radius: 28px; }
+    .nav-links { gap: 1rem; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .medium-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo"><i class="fas fa-chart-line"></i> Bothwell Shumba</div>
+  <div class="nav-links">
+    <a href="#projects"><i class="fas fa-folder-open"></i> Work</a>
+    <a href="#medium-section"><i class="fab fa-medium"></i> Medium Posts</a>
+    <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-text">
+    <h1>Bothwell I. Shumba</h1>
+    <div class="title-badge"><i class="fas fa-microchip"></i> Data Science · AI Engineering · Advanced Analytics</div>
+    <p>6+ years of enterprise experience building production-grade ML systems, analytical dashboards, and AI-driven strategies that deliver measurable business outcomes.</p>
+    <div class="btn-group">
+      <a class="btn btn-primary" href="cv.pdf" target="_blank"><i class="fas fa-file-alt"></i> View CV</a>
+      <a class="btn btn-outline" href="https://github.com/bothwellishumba" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a class="btn btn-outline" href="https://linkedin.com/in/bothwellshumba" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="Profile.png" alt="Bothwell Shumba" onerror="this.src='https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?auto=format&fit=crop&w=800&q=80'">
+  </div>
+</div>
+
+<div class="contact-ribbon">
+  <div class="contact-chip"><i class="fas fa-envelope"></i> bothwell.i.shumba@gmail.com</div>
+  <div class="contact-chip"><i class="fas fa-phone-alt"></i> +974 33389634</div>
+  <div class="contact-chip"><i class="fas fa-map-pin"></i> Doha, Qatar</div>
+  <div class="contact-chip"><i class="fab fa-github"></i> bothwellishumba</div>
+  <button class="email-action" id="ribbonEmailBtn"><i class="fas fa-paper-plane"></i> Reach out</button>
+</div>
+
+<section id="projects">
+  <div class="section-header">
+    <i class="fas fa-cube"></i>
+    <h2 class="section-title">Enterprise projects</h2>
+  </div>
+  <div class="section-divider"></div>
+  <div class="projects-grid" id="projectsGrid"></div>
+</section>
+
+<section id="medium-section">
+  <div class="section-header">
+    <i class="fab fa-medium"></i>
+    <h2 class="section-title">All my Medium articles</h2>
+  </div>
+  <div class="section-divider"></div>
+  <div id="mediumFeedContainer" class="medium-grid">
+    <div class="loader-container"><div class="loader"></div><span>Fetching all posts from bothwellishumba.medium.com...</span></div>
+  </div>
+  <div id="paginationContainer" class="pagination-controls"></div>
+  <div id="postsCounter" class="posts-counter"></div>
+</section>
+
+<section id="contact">
+  <div class="cta-card">
+    <i class="fas fa-handshake" style="font-size: 2rem; color: var(--blue-corporate); margin-bottom: 0.5rem; display: inline-block;"></i>
+    <h3 style="font-weight: 700; color: var(--navy-dark);">Let's collaborate</h3>
+    <p style="color: var(--gray-muted); margin-top: 0.3rem;">Looking for data science leadership, AI architecture, or analytics advisory?</p>
+    <button class="btn-cta" id="mainEmailBtn"><i class="fas fa-envelope-open-text"></i> Send a message</button>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Bothwell I. Shumba — Data Science & AI Engineering</p>
+</footer>
+
+<script>
+  // Projects Data
+  const projectsData = [
+    { title: "Food Delivery Analytics", desc: "Comprehensive analysis of food delivery platform metrics, order patterns, and operational efficiency.", tech: "Python, Pandas, Data Visualization", link: "https://nbviewer.org/github/bothwellishumba/Food-Delivery-Platform/blob/main/Case_1.ipynb", img: "Food Delivery.jpeg" },
+    { title: "Food Delivery Case Study 2", desc: "Advanced analysis of delivery times, customer satisfaction, and route optimization strategies.", tech: "Python, Time Series, Geospatial", link: "https://nbviewer.org/github/bothwellishumba/Food-Delivery-Platform/blob/main/Case%202.ipynb", img: "Food Delivery1.jpeg" },
+    { title: "ERP Migration Dashboard", desc: "Power BI visualization suite for ERP migration tracking, KPIs, and business process monitoring.", tech: "Power BI, DAX, Data Modeling", link: "https://nbviewer.org/github/bothwellishumba/ERP-Migration-Power-BI-Project/blob/main/PowerBi%20Viz.pdf", img: "ERP.jpg" },
+    { title: "eCommerce Intelligence", desc: "RFM segmentation, cohort retention analysis, and revenue forecasting for e-commerce platforms.", tech: "Python, Plotly, SQL", link: "https://github.com/bothwellishumba/eCommerce-Analysis-", img: "Ecommerce.jpg" },
+    { title: "911 Calls Analytics", desc: "Time-series clustering and geospatial analysis of emergency call patterns for response optimization.", tech: "Pandas, Seaborn, Folium", link: "https://nbviewer.org/github/bothwellishumba/Python-Basics-For-Data-Science-Program/blob/main/911%20Calls%20Data.ipynb", img: "911 Calls.jpg" },
+    { title: "Financial Risk Suite", desc: "Credit default modeling and portfolio risk analytics using advanced statistical methods.", tech: "Scikit-learn, XGBoost, Finance", link: "https://nbviewer.org/github/bothwellishumba/Python-Basics-For-Data-Science-Program/blob/main/Finance%20Project.ipynb", img: "Finance.jpg" },
+    { title: "SpaceX Launch Analytics", desc: "Interactive EDA identifying success drivers: booster landing, payload mass, and weather patterns.", tech: "Matplotlib, Seaborn, Plotly", link: "https://nbviewer.org/github/bothwellishumba/SpaceX-Capstone-Project-/blob/main/EDA%20with%20Visualization.ipynb", img: "SpaceX.jpg" },
+    { title: "SpaceX SQL Analysis", desc: "Advanced SQL-based exploratory analysis of launch data and mission success factors.", tech: "SQL, PostgreSQL, Data Analysis", link: "https://nbviewer.org/github/bothwellishumba/SpaceX-Capstone-Project-/blob/main/EDA_WITH_SQL.ipynb", img: "SpaceX1.jpg" },
+    { title: "Regression Modeling", desc: "Predictive modeling using advanced regularization and feature engineering techniques.", tech: "Statsmodels, Ridge, Lasso", link: "https://nbviewer.org/github/bothwellishumba/Machine-Learning-Projects/blob/main/02-Linear%20Regression%20Project.ipynb", img: "Regression.png" },
+    { title: "Decision Trees & Random Forest", desc: "Ensemble learning for classification with SHAP explanations and model interpretability.", tech: "Random Forest, SHAP, GridSearch", link: "https://nbviewer.org/github/bothwellishumba/Machine-Learning-Projects/blob/main/Decision%20Trees%20and%20Random%20Forest%20Project.ipynb", img: "Decision Trees.jpg" },
+    { title: "K-Means Clustering", desc: "Unsupervised learning for customer segmentation and pattern discovery.", tech: "K-Means, PCA, Visualization", link: "https://nbviewer.org/github/bothwellishumba/Machine-Learning-Projects/blob/main/K%20Means%20Clustering%20Project.ipynb", img: "K Means Clustering.jpg" },
+    { title: "NLP Sentiment Analysis", desc: "Natural language processing for sentiment classification and text analytics.", tech: "NLP, Transformers, Hugging Face", link: "https://nbviewer.org/github/bothwellishumba/Machine-Learning-Projects/blob/main/NLP%20Project.ipynb", img: "NLP.png" },
+    { title: "Principal Component Analysis", desc: "Dimensionality reduction and feature extraction for high-dimensional datasets.", tech: "PCA, Scikit-learn, Visualization", link: "https://nbviewer.org/github/bothwellishumba/Machine-Learning-Projects/blob/main/Principal%20Component%20Analysis.ipynb", img: "PCA.jpg" },
+    { title: "Recommender System", desc: "Collaborative filtering engine for personalized recommendations and increased engagement.", tech: "Surprise, Matrix Factorization", link: "https://nbviewer.org/github/bothwellishumba/Machine-Learning-Projects/blob/main/RECOMMENDER%20SYSTEM.ipynb", img: "Recomender System.png" },
+    { title: "SVM Classification", desc: "Support Vector Machines for high-accuracy classification tasks with kernel methods.", tech: "SVM, Scikit-learn, Hyperparameter Tuning", link: "https://nbviewer.org/github/bothwellishumba/Machine-Learning-Projects/blob/main/Support%20Vector%20Machines%20Project.ipynb", img: "SVM.jpg" }
+  ];
+
+  function renderProjects() {
+    const container = document.getElementById('projectsGrid');
+    if (!container) return;
+    container.innerHTML = '';
+    projectsData.forEach(proj => {
+      const card = document.createElement('div');
+      card.className = 'project-card';
+      card.addEventListener('click', () => window.open(proj.link, '_blank'));
+      const img = document.createElement('img');
+      img.src = proj.img;
+      img.alt = proj.title;
+      img.className = 'project-img';
+      img.onerror = function() { this.src = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'; };
+      const content = document.createElement('div');
+      content.className = 'project-content';
+      content.innerHTML = `
+        <div class="project-title"><i class="fas fa-chart-simple"></i> ${escapeHtml(proj.title)}</div>
+        <div class="project-desc">${escapeHtml(proj.desc)}</div>
+        <div class="project-tech"><i class="fas fa-code-branch"></i> ${escapeHtml(proj.tech)}</div>
+      `;
+      card.appendChild(img);
+      card.appendChild(content);
+      container.appendChild(card);
+    });
+  }
+
+  // Medium Feed - Using subdomain approach with multiple fallback methods
+  let allMediumPosts = [];
+  let currentPage = 1;
+  const postsPerPage = 12;
+
+  async function fetchMediumPostsWithFallback() {
+    const username = 'bothwellishumba';
+    // Try multiple RSS feed URLs (subdomain approach)
+    const feedUrls = [
+      `https://bothwellishumba.medium.com/feed`,
+      `https://medium.com/feed/@${username}`,
+      `https://medium.com/feed/${username}`
+    ];
+    
+    const container = document.getElementById('mediumFeedContainer');
+    if (!container) return;
+    
+    // Try each feed URL until one works
+    for (let i = 0; i < feedUrls.length; i++) {
+      try {
+        const rssUrl = feedUrls[i];
+        const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+        
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        
+        if (data.status === 'ok' && data.items && data.items.length > 0) {
+          allMediumPosts = data.items;
+          updatePostsDisplay();
+          return;
+        }
+      } catch (error) {
+        console.log(`Failed with URL ${feedUrls[i]}, trying next...`);
+      }
+    }
+    
+    // If all RSS methods fail, show fallback options
+    showFallbackOptions();
+  }
+
+  function updatePostsDisplay() {
+    if (!allMediumPosts.length) {
+      showFallbackOptions();
+      return;
+    }
+    
+    renderPaginatedMediumPosts();
+    setupPaginationControls();
+    
+    const counterDiv = document.getElementById('postsCounter');
+    if (counterDiv) {
+      counterDiv.innerHTML = `📚 Total: ${allMediumPosts.length} article${allMediumPosts.length !== 1 ? 's' : ''} from bothwellishumba.medium.com`;
+    }
+  }
+
+  function renderPaginatedMediumPosts() {
+    const container = document.getElementById('mediumFeedContainer');
+    if (!container) return;
+    
+    const startIdx = (currentPage - 1) * postsPerPage;
+    const endIdx = startIdx + postsPerPage;
+    const pagePosts = allMediumPosts.slice(startIdx, endIdx);
+    
+    container.innerHTML = '';
+    pagePosts.forEach(post => {
+      let description = post.description || '';
+      let plainText = description.replace(/<[^>]*>/g, '');
+      let excerpt = plainText.length > 140 ? plainText.substring(0, 140) + '...' : plainText;
+      if (!excerpt.trim()) excerpt = 'Read the full article on Medium for deeper insights.';
+      
+      const pubDate = new Date(post.pubDate);
+      const formattedDate = pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+      let thumbUrl = post.thumbnail || 'https://miro.medium.com/v2/resize:fit:1200/1*VgM2FwW5Z6l_U0y9kWtV5Q.png';
+      
+      const card = document.createElement('div');
+      card.className = 'medium-card';
+      card.addEventListener('click', () => window.open(post.link, '_blank'));
+      
+      card.innerHTML = `
+        <img class="medium-img" src="${escapeHtml(thumbUrl)}" alt="${escapeHtml(post.title)}" loading="lazy" onerror="this.src='https://miro.medium.com/v2/resize:fit:1200/1*J8UArblnOhZ8_4u1zKAhqw.png'">
+        <div class="medium-content">
+          <div class="medium-title">${escapeHtml(post.title)}</div>
+          <div class="medium-meta"><i class="far fa-calendar-alt"></i> ${formattedDate}  •  <i class="fab fa-medium"></i> ${escapeHtml(post.author || 'Bothwell Shumba')}</div>
+          <div class="medium-excerpt">${escapeHtml(excerpt)}</div>
+          <div class="read-link">Read on Medium <i class="fas fa-external-link-alt"></i></div>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+    
+    const counterDiv = document.getElementById('postsCounter');
+    if (counterDiv && allMediumPosts.length) {
+      const totalPages = Math.ceil(allMediumPosts.length / postsPerPage);
+      counterDiv.innerHTML = `📚 Total: ${allMediumPosts.length} article${allMediumPosts.length !== 1 ? 's' : ''} — Page ${currentPage} of ${totalPages}`;
+    }
+  }
+
+  function setupPaginationControls() {
+    const paginationDiv = document.getElementById('paginationContainer');
+    if (!paginationDiv) return;
+    const totalPages = Math.ceil(allMediumPosts.length / postsPerPage);
+    if (totalPages <= 1) {
+      paginationDiv.innerHTML = '';
+      return;
+    }
+    
+    let buttonsHtml = '';
+    buttonsHtml += `<button class="page-btn" data-page="prev" ${currentPage === 1 ? 'disabled style="opacity:0.5; cursor:default;"' : ''}>← Prev</button>`;
+    
+    let startPage = Math.max(1, currentPage - 2);
+    let endPage = Math.min(totalPages, currentPage + 2);
+    if (startPage > 1) buttonsHtml += `<button class="page-btn" data-page="1">1</button>${startPage > 2 ? '<span style="margin:0 4px;">...</span>' : ''}`;
+    for (let i = startPage; i <= endPage; i++) {
+      buttonsHtml += `<button class="page-btn ${i === currentPage ? 'active' : ''}" data-page="${i}">${i}</button>`;
+    }
+    if (endPage < totalPages) buttonsHtml += `${endPage < totalPages - 1 ? '<span style="margin:0 4px;">...</span>' : ''}<button class="page-btn" data-page="${totalPages}">${totalPages}</button>`;
+    
+    buttonsHtml += `<button class="page-btn" data-page="next" ${currentPage === totalPages ? 'disabled style="opacity:0.5; cursor:default;"' : ''}>Next →</button>`;
+    paginationDiv.innerHTML = buttonsHtml;
+    
+    document.querySelectorAll('.page-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const pageVal = btn.getAttribute('data-page');
+        if (pageVal === 'prev' && currentPage > 1) {
+          currentPage--;
+          renderPaginatedMediumPosts();
+          setupPaginationControls();
+        } else if (pageVal === 'next' && currentPage < totalPages) {
+          currentPage++;
+          renderPaginatedMediumPosts();
+          setupPaginationControls();
+        } else if (!isNaN(parseInt(pageVal))) {
+          const newPage = parseInt(pageVal);
+          if (newPage !== currentPage && newPage >= 1 && newPage <= totalPages) {
+            currentPage = newPage;
+            renderPaginatedMediumPosts();
+            setupPaginationControls();
+          }
+        }
+      });
+    });
+  }
+
+  function showFallbackOptions() {
+    const container = document.getElementById('mediumFeedContainer');
+    const username = 'bothwellishumba';
+    
+    container.innerHTML = `
+      <div class="error-message" style="grid-column: 1/-1;">
+        <i class="fas fa-exclamation-triangle" style="font-size: 2rem; margin-bottom: 1rem; display: block;"></i>
+        <h3 style="margin-bottom: 1rem;">Unable to fetch Medium feed automatically</h3>
+        <p style="margin-bottom: 1rem;">You can still read all my articles directly on Medium:</p>
+        <a href="https://bothwellishumba.medium.com" target="_blank" class="btn btn-primary" style="display: inline-flex; margin: 0.5rem;">
+          <i class="fab fa-medium"></i> Visit my Medium profile
+        </a>
+        <a href="https://medium.com/@${username}" target="_blank" class="btn btn-outline" style="display: inline-flex; margin: 0.5rem;">
+          <i class="fab fa-medium"></i> medium.com/@${username}
+        </a>
+        <p style="margin-top: 1.5rem; font-size: 0.8rem;">
+          <i class="fas fa-info-circle"></i> All articles are available at bothwellishumba.medium.com
+        </p>
+      </div>
+    `;
+    
+    const paginationDiv = document.getElementById('paginationContainer');
+    if (paginationDiv) paginationDiv.innerHTML = '';
+    
+    const counterDiv = document.getElementById('postsCounter');
+    if (counterDiv) counterDiv.innerHTML = '✨ Visit bothwellishumba.medium.com for all articles ✨';
+  }
+
+  function escapeHtml(str) { 
+    if(!str) return ''; 
+    return str.replace(/[&<>]/g, m => m === '&' ? '&amp;' : m === '<' ? '&lt;' : '&gt;'); 
+  }
+
+  function sendEmail() { 
+    window.location.href = "mailto:bothwell.i.shumba@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Bothwell%2C"; 
+  }
+
+  // Initialize everything
+  document.getElementById('ribbonEmailBtn')?.addEventListener('click', sendEmail);
+  document.getElementById('mainEmailBtn')?.addEventListener('click', sendEmail);
+  
+  const githubLink = document.querySelector('.btn-outline[href*="github.com"]');
+  if (githubLink) githubLink.setAttribute('href', 'https://github.com/bothwellishumba');
+  
+  renderProjects();
+  fetchMediumPostsWithFallback();
+</script>
+</body>
+</html>
