@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- PRIMARY TITLE - This tells Google exactly what to show in search results -->
+  <title data-nosnippet>Bothwell I. Shumba | Data Scientist & AI Engineer Portfolio</title>
+
+  <link rel="canonical" href="https://bothwellishumba.github.io/">
+  <link rel="icon" href="favicon.ico">
+  <meta name="keywords" content="Bothwell Shumba, Data Scientist, AI Engineer, Dashboard Engineer, Python, SQL, Power BI, Machine Learning">
+
+  <!-- CRITICAL: Site name for Google Search - Updated to show "Bothwell I. Shumba" instead of "GitHub Pages" -->
+  <meta name="application-name" content="Bothwell I. Shumba">
+  <meta property="og:site_name" content="Bothwell I. Shumba">
+  <meta name="apple-mobile-web-app-title" content="Bothwell I. Shumba">
+
+  <!-- Open Graph tags for better search results display -->
+  <meta property="og:title" content="Bothwell I. Shumba | Data Scientist & AI Engineer Portfolio">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bothwellishumba.github.io">
+  <meta property="og:description" content="Data Science & AI Portfolio with enterprise experience building production-grade ML systems, analytical dashboards, and AI-driven strategies.">
+
+  <!-- SEO meta tags for Google and other search engines -->
+  <meta name="description" content="Bothwell I. Shumba - Data Science & AI Portfolio. Enterprise experience building production-grade ML systems, analytical dashboards, and AI-driven strategies that deliver measurable business outcomes.">
+  <meta name="author" content="Bothwell I. Shumba">
+  <meta name="robots" content="index, follow">
+
+  <!-- Twitter Card for better social sharing -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bothwell I. Shumba | Data Scientist & AI Engineer Portfolio">
+  <meta name="twitter:description" content="Data Science & AI Portfolio with enterprise experience building production-grade ML systems.">
+
+  <!-- Schema.org structured data - Helps Google understand who you are -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Bothwell I. Shumba",
+    "url": "https://bothwellishumba.github.io",
+    "email": "bothwell.i.shumba@gmail.com",
+    "jobTitle": "Data Scientist & AI Engineer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Data Science & AI Consulting"
+    },
+    "sameAs": [
+      "https://github.com/bothwellishumba",
+      "https://www.linkedin.com"
+    ]
+  }
+  </script>
+
+  <!-- WebSite structured data - Reinforces "Bothwell I. Shumba" as the site name in Google Search (instead of the default GitHub Pages label) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Bothwell I. Shumba",
+    "alternateName": "Bothwell I. Shumba | Data Scientist & AI Engineer Portfolio",
+    "url": "https://bothwellishumba.github.io"
+  }
+  </script>
+
+  <!-- Modern font stack -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-corporate: #f5f7fc;
+      --surface-white: #ffffff;
+      --navy-dark: #0a2540;
+      --blue-corporate: #0066cc;
+      --blue-hover: #0052a3;
+      --blue-soft: #eef4ff;
+      --slate-text: #1e2f3e;
+      --gray-muted: #5c6f87;
+      --border-light: #e2e8f0;
+      --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 20px 35px -8px rgba(0, 0, 0, 0.08);
+      --jarvis-accent: #0066cc;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg-corporate);
+      background-image:
+        radial-gradient(circle at 8% 0%, var(--blue-soft) 0%, transparent 38%),
+        radial-gradient(circle at 100% 12%, var(--blue-soft) 0%, transparent 32%);
+      background-repeat: no-repeat;
+      color: var(--slate-text);
+      line-height: 1.5;
+    }
+
+    /* Scroll-reveal animation (progressive enhancement, no functional impact) */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Professional JARVIS Chat Widget */
+    .jarvis-widget {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 1001;
+    }
+
+    .jarvis-toggle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--blue-corporate);
+      border: none;
+      box-shadow: 0 4px 20px rgba(0, 102, 204, 0.3);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      color: white;
+      font-size: 28px;
+      position: relative;
+      animation: jarvisPulseRing 2.6s ease-out infinite;
+    }
+
+    @keyframes jarvisPulseRing {
+      0% { box-shadow: 0 4px 20px rgba(0, 102, 204, 0.3), 0 0 0 0 rgba(0, 102, 204, 0.35); }
+      70% { box-shadow: 0 4px 20px rgba(0, 102, 204, 0.3), 0 0 0 14px rgba(0, 102, 204, 0); }
+      100% { box-shadow: 0 4px 20px rgba(0, 102, 204, 0.3), 0 0 0 0 rgba(0, 102, 204, 0); }
+    }
+
+    .jarvis-badge {
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      background: var(--navy-dark);
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 700;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid white;
+      opacity: 0;
+      transform: scale(0.5);
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+    .jarvis-badge.show { opacity: 1; transform: scale(1); }
+
+    .jarvis-toggle:hover {
+      transform: scale(1.05);
+      background: var(--blue-hover);
+      box-shadow: 0 6px 25px rgba(0, 102, 204, 0.4);
+    }
+
+    .jarvis-chat-panel {
+      position: absolute;
+      bottom: 75px;
+      right: 0;
+      width: 400px;
+      height: 550px;
+      background: var(--surface-white);
+      border-radius: 24px;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      animation: jarvisPanelIn 0.28s ease both;
+    }
+
+    @keyframes jarvisPanelIn {
+      from { opacity: 0; transform: translateY(12px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .jarvis-chat-panel.hidden {
+      display: none;
+    }
+
+    .jarvis-header {
+      padding: 18px 20px;
+      background: linear-gradient(135deg, var(--blue-corporate), var(--blue-hover));
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .jarvis-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .jarvis-avatar i { font-size: 18px; }
+
+    .jarvis-header-text { flex: 1; min-width: 0; }
+
+    .jarvis-header h4 {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .jarvis-online-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ffffff;
+      display: inline-block;
+      opacity: 0.9;
+      animation: dotPulse 1.8s ease-in-out infinite;
+    }
+    @keyframes dotPulse {
+      0%, 100% { opacity: 0.5; transform: scale(0.85); }
+      50% { opacity: 1; transform: scale(1.1); }
+    }
+
+    .jarvis-header p {
+      font-size: 0.7rem;
+      opacity: 0.9;
+      margin: 0;
+    }
+
+    .jarvis-close-btn {
+      background: rgba(255, 255, 255, 0.15);
+      border: none;
+      color: white;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      cursor: pointer;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      transition: background 0.2s ease;
+    }
+    .jarvis-close-btn:hover { background: rgba(255, 255, 255, 0.3); }
+
+    .jarvis-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: #f9fafb;
+    }
+
+    .message {
+      max-width: 85%;
+      padding: 10px 14px;
+      border-radius: 18px;
+      font-size: 0.85rem;
+      line-height: 1.45;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .message.user {
+      background: var(--blue-corporate);
+      color: white;
+      align-self: flex-end;
+      border-bottom-right-radius: 4px;
+    }
+
+    .message.jarvis {
+      background: white;
+      color: var(--slate-text);
+      align-self: flex-start;
+      border-bottom-left-radius: 4px;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .jarvis-input-area {
+      padding: 16px;
+      background: white;
+      display: flex;
+      gap: 10px;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .jarvis-input-area input {
+      flex: 1;
+      padding: 12px 16px;
+      border-radius: 30px;
+      border: 1px solid var(--border-light);
+      background: var(--bg-corporate);
+      font-family: inherit;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+
+    .jarvis-input-area input:focus {
+      outline: none;
+      border-color: var(--blue-corporate);
+    }
+
+    .jarvis-input-area input::placeholder {
+      color: var(--gray-muted);
+    }
+
+    .jarvis-input-area button {
+      background: var(--blue-corporate);
+      border: none;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      cursor: pointer;
+      color: white;
+      font-weight: bold;
+      transition: all 0.2s;
+    }
+
+    .jarvis-input-area button:hover {
+      background: var(--blue-hover);
+      transform: scale(1.02);
+    }
+
+    .jarvis-quick-replies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 10px 16px;
+      background: white;
+      border-top: 1px solid var(--border-light);
+    }
+    .quick-chip {
+      background: var(--blue-soft);
+      color: var(--blue-corporate);
+      border: 1px solid transparent;
+      padding: 6px 12px;
+      border-radius: 30px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .quick-chip:hover {
+      background: var(--blue-corporate);
+      color: white;
+      transform: translateY(-1px);
+    }
+
+    .message-row {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      max-width: 100%;
+    }
+    .message-row.user { flex-direction: row-reverse; }
+    .msg-avatar {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      flex-shrink: 0;
+    }
+    .msg-avatar.user { background: var(--blue-corporate); color: white; }
+    .msg-avatar.jarvis { background: var(--blue-soft); color: var(--blue-corporate); }
+    .message-row .message { animation: fadeUp 0.25s ease both; }
+
+    .typing-indicator {
+      display: flex;
+      gap: 4px;
+      padding: 10px 16px;
+      background: white;
+      border-radius: 20px;
+      width: fit-content;
+      border: 1px solid var(--border-light);
+    }
+
+    .typing-indicator span {
+      width: 6px;
+      height: 6px;
+      background: var(--blue-corporate);
+      border-radius: 50%;
+      animation: typing 1.4s infinite;
+    }
+
+    .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+    .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes typing {
+      0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+      30% { opacity: 1; transform: translateY(-4px); }
+    }
+
+    /* Main Site Styles */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.9rem 6%;
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-light);
+      z-index: 1000;
+      transition: box-shadow 0.25s ease;
+    }
+
+    .navbar.scrolled {
+      box-shadow: var(--shadow-sm);
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: var(--navy-dark);
+      letter-spacing: -0.3px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo i {
+      color: var(--blue-corporate);
+      font-size: 1.3rem;
+      transition: transform 0.3s ease;
+    }
+    .logo:hover i { transform: rotate(-8deg) scale(1.08); }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a {
+      color: var(--gray-muted);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: var(--blue-corporate);
+      transition: width 0.25s ease;
+    }
+    .nav-links a:hover { color: var(--blue-corporate); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 3.5rem 6% 2.5rem;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .hero-text h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      background: linear-gradient(120deg, var(--navy-dark) 40%, var(--blue-corporate) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      animation: fadeUp 0.7s ease both;
+    }
+    .title-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--blue-soft);
+      color: var(--blue-corporate);
+      border-radius: 40px;
+      padding: 0.2rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      width: fit-content;
+      margin: 0.75rem 0 0.5rem;
+      animation: fadeUp 0.7s ease 0.08s both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .hero-text p {
+      margin-top: 0.75rem;
+      color: var(--gray-muted);
+      max-width: 540px;
+      font-size: 0.95rem;
+      animation: fadeUp 0.7s ease 0.16s both;
+    }
+    .btn-group {
+      margin-top: 1.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      animation: fadeUp 0.7s ease 0.24s both;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.6rem 1.3rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--blue-corporate);
+      color: white;
+      box-shadow: 0 2px 6px rgba(0, 102, 204, 0.2);
+    }
+    .btn-primary:hover {
+      background: var(--blue-hover);
+      transform: translateY(-1px);
+    }
+    .btn:active { transform: scale(0.97); }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border-light);
+      color: var(--slate-text);
+    }
+    .btn-outline:hover {
+      background: var(--blue-soft);
+      border-color: var(--blue-corporate);
+    }
+    .hero-img img {
+      width: 100%;
+      max-width: 270px;
+      border-radius: 32px;
+      object-fit: cover;
+      aspect-ratio: 1/1;
+      box-shadow: var(--shadow-lg);
+      border: 3px solid white;
+      animation: float 5s ease-in-out infinite;
+      transition: transform 0.3s ease;
+    }
+    .hero-img img:hover {
+      transform: scale(1.03);
+    }
+    .hero-stats {
+      display: flex;
+      gap: 1.6rem;
+      margin-top: 1.8rem;
+      flex-wrap: wrap;
+      animation: fadeUp 0.7s ease 0.32s both;
+    }
+    .hero-stat-num {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--navy-dark);
+      line-height: 1.1;
+    }
+    .hero-stat-label {
+      font-size: 0.7rem;
+      color: var(--gray-muted);
+      font-weight: 500;
+      margin-top: 2px;
+    }
+    .contact-ribbon {
+      background: var(--surface-white);
+      margin: 0 6% 2rem;
+      border-radius: 60px;
+      padding: 0.7rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.8rem;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+    }
+    .contact-chip {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      color: var(--gray-muted);
+    }
+    .contact-chip i { color: var(--blue-corporate); width: 18px; }
+    .email-action {
+      background: var(--blue-soft);
+      color: var(--blue-corporate);
+      padding: 0.3rem 1.1rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+    }
+    section { padding: 2rem 6%; }
+    .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem; }
+    .section-title-wrapper { display: flex; align-items: baseline; gap: 12px; }
+    .section-title-wrapper i { font-size: 1.6rem; color: var(--blue-corporate); }
+    .section-title { font-size: 1.7rem; font-weight: 700; color: var(--navy-dark); letter-spacing: -0.3px; }
+    .jarvis-section-btn {
+      background: linear-gradient(135deg, var(--blue-corporate), var(--blue-hover));
+      color: white;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+      box-shadow: var(--shadow-sm);
+    }
+    .jarvis-section-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .section-divider { width: 50px; height: 3px; background: var(--blue-corporate); margin: 0.2rem 0 1.5rem; border-radius: 3px; }
+
+    .section-intro {
+      color: var(--gray-muted);
+      font-size: 0.9rem;
+      max-width: 640px;
+      margin: -0.6rem 0 1.2rem;
+      line-height: 1.55;
+    }
+
+    .filter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+    .filter-pill {
+      background: var(--surface-white);
+      border: 1px solid var(--border-light);
+      color: var(--gray-muted);
+      padding: 0.4rem 1.1rem;
+      border-radius: 30px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .filter-pill:hover {
+      border-color: var(--blue-corporate);
+      color: var(--blue-corporate);
+    }
+    .filter-pill.active {
+      background: var(--blue-corporate);
+      border-color: var(--blue-corporate);
+      color: white;
+      box-shadow: 0 2px 8px rgba(0, 102, 204, 0.25);
+    }
+
+    .skills-section {
+      padding-top: 0.5rem;
+      padding-bottom: 1.2rem;
+    }
+    .skills-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--blue-corporate);
+      margin-bottom: 0.8rem;
+    }
+    .skills-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+    .skill-chip {
+      background: var(--surface-white);
+      border: 1px solid var(--border-light);
+      color: var(--slate-text);
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+    }
+    .skill-chip:hover {
+      transform: translateY(-2px);
+      border-color: var(--blue-corporate);
+      color: var(--blue-corporate);
+      box-shadow: var(--shadow-md);
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.8rem;
+      margin-top: 1rem;
+    }
+    .project-card {
+      background: var(--surface-white);
+      border-radius: 24px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--blue-corporate);
+    }
+    .project-img-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+    .project-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      background: var(--blue-soft);
+      transition: transform 0.4s ease;
+      display: block;
+    }
+    .project-card:hover .project-img {
+      transform: scale(1.06);
+    }
+    .project-category-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(10, 37, 64, 0.85);
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.7rem;
+      border-radius: 20px;
+      backdrop-filter: blur(4px);
+    }
+    .project-view-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(10, 37, 64, 0) 40%, rgba(10, 37, 64, 0.75) 100%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      padding: 12px;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .project-card:hover .project-view-overlay { opacity: 1; }
+    .project-view-cta {
+      background: white;
+      color: var(--blue-corporate);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.4rem 0.85rem;
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: var(--shadow-sm);
+    }
+    .project-content { padding: 1.2rem 1.2rem 1.3rem; }
+    .project-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--navy-dark);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .project-desc {
+      font-size: 0.82rem;
+      color: var(--gray-muted);
+      line-height: 1.45;
+      margin: 0.3rem 0 0.7rem;
+    }
+    .project-tech {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--blue-corporate);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Medium Posts Grid */
+    .medium-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.8rem;
+      margin-top: 1rem;
+    }
+    .medium-card {
+      background: var(--surface-white);
+      border-radius: 24px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+    }
+    .medium-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--blue-corporate);
+    }
+    .medium-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      background: var(--blue-soft);
+      transition: transform 0.4s ease;
+    }
+    .medium-card:hover .medium-img {
+      transform: scale(1.06);
+    }
+    .medium-content { padding: 1.2rem 1.2rem 1.3rem; }
+    .medium-title {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--navy-dark);
+      margin-bottom: 0.4rem;
+      line-height: 1.3;
+    }
+    .medium-meta {
+      font-size: 0.7rem;
+      color: var(--gray-muted);
+      margin-bottom: 0.5rem;
+      display: flex;
+      gap: 12px;
+    }
+    .medium-excerpt {
+      font-size: 0.8rem;
+      color: var(--gray-muted);
+      line-height: 1.45;
+    }
+    .loader-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3rem;
+      background: white;
+      border-radius: 24px;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .loader {
+      border: 3px solid var(--border-light);
+      border-top: 3px solid var(--blue-corporate);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .pagination-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    .page-btn {
+      background: white;
+      border: 1px solid var(--border-light);
+      padding: 0.5rem 1rem;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .page-btn.active {
+      background: var(--blue-corporate);
+      border-color: var(--blue-corporate);
+      color: white;
+    }
+    .posts-counter {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      color: var(--gray-muted);
+    }
+
+    .cta-card {
+      background: linear-gradient(135deg, #ffffff 0%, #f8faff 100%);
+      border-radius: 32px;
+      padding: 1.8rem;
+      text-align: center;
+      border: 1px solid var(--border-light);
+    }
+    .btn-cta {
+      background: var(--blue-corporate);
+      border: none;
+      padding: 0.65rem 1.8rem;
+      border-radius: 40px;
+      color: white;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      margin-top: 0.8rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      border-top: 1px solid var(--border-light);
+      color: var(--gray-muted);
+      background: white;
+      font-size: 0.75rem;
+    }
+    @media (max-width: 700px) {
+      .hero-text h1 { font-size: 2.2rem; }
+      .contact-ribbon { flex-direction: column; align-items: stretch; border-radius: 28px; }
+      .nav-links { gap: 1rem; }
+      .jarvis-chat-panel { width: 320px; right: 0; }
+      .section-header { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo"><i class="fas fa-chart-line"></i> Bothwell I. Shumba</div>
+  <div class="nav-links">
+    <a href="#projects"><i class="fas fa-folder-open"></i> Portfolio</a>
+    <a href="#medium-section"><i class="fab fa-medium"></i> Medium</a>
+    <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-text">
+    <h1>Data Professional</h1>
+    <div class="title-badge"><i class="fas fa-microchip"></i> Data Science · AI Engineering · Advanced Analytics</div>
+    <p>Enterprise experience building production-grade ML systems, analytical dashboards, and AI-driven strategies that deliver measurable business outcomes.</p>
+    <div class="btn-group">
+      <a class="btn btn-primary" id="requestCvBtn"><i class="fas fa-file-alt"></i> Request for CV</a>
+      <a class="btn btn-outline" href="https://github.com/bothwellishumba" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a class="btn btn-outline" href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    </div>
+    <div class="hero-stats" id="heroStats"></div>
+  </div>
+  <div class="hero-img">
+    <img src="Profile.png" alt="Bothwell Shumba" onerror="this.src='https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?auto=format&fit=crop&w=800&q=80'">
+  </div>
+</div>
+
+<div class="contact-ribbon">
+  <div class="contact-chip"><i class="fas fa-envelope"></i> bothwell.i.shumba@gmail.com</div>
+  <div class="contact-chip"><i class="fas fa-phone-alt"></i> +974 33389634</div>
+  <div class="contact-chip"><i class="fas fa-map-pin"></i> Doha, Qatar</div>
+  <div class="contact-chip"><i class="fab fa-github"></i> bothwellishumba</div>
+  <button class="email-action" id="ribbonEmailBtn"><i class="fas fa-paper-plane"></i> Reach out</button>
+</div>
+
+<section class="skills-section reveal">
+  <div class="skills-eyebrow"><i class="fas fa-layer-group"></i> Core Expertise</div>
+  <div class="skills-strip" id="skillsStrip"></div>
+</section>
+
+<section id="projects" class="reveal">
+  <div class="section-header">
+    <div class="section-title-wrapper">
+      <i class="fas fa-cube"></i>
+      <h2 class="section-title">Project Portfolio</h2>
+    </div>
+    <button class="jarvis-section-btn" id="openJarvisBtn"><i class="fas fa-robot"></i> Ask Jarvis</button>
+  </div>
+  <div class="section-divider"></div>
+  <p class="section-intro">A hands-on collection of production-style Machine Learning, NLP, Business Intelligence, and Data Analytics work. Filter by domain below, or ask JARVIS for a guided walkthrough.</p>
+  <div class="filter-pills" id="filterPills"></div>
+  <div class="projects-grid" id="projectsGrid"></div>
+</section>
+
+<section id="medium-section" class="reveal">
+  <div class="section-header">
+    <div class="section-title-wrapper">
+      <i class="fab fa-medium"></i>
+      <h2 class="section-title">Latest on Medium</h2>
+    </div>
+  </div>
+  <div class="section-divider"></div>
+  <div id="mediumFeedContainer" class="medium-grid">
+    <div class="loader-container"><div class="loader"></div><span>Loading articles from bothwellishumba.medium.com...</span></div>
+  </div>
+  <div id="paginationContainer" class="pagination-controls"></div>
+  <div id="postsCounter" class="posts-counter"></div>
+</section>
+
+<section id="contact" class="reveal">
+  <div class="cta-card">
+    <i class="fas fa-handshake" style="font-size: 2rem; color: var(--blue-corporate); margin-bottom: 0.5rem; display: inline-block;"></i>
+    <h3 style="font-weight: 700; color: var(--navy-dark);">Let's collaborate</h3>
+    <p style="color: var(--gray-muted); margin-top: 0.3rem;">Looking for data science leadership, AI architecture, or analytics advisory?</p>
+    <button class="btn-cta" id="mainEmailBtn"><i class="fas fa-envelope-open-text"></i> Send a message</button>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Bothwell I. Shumba — Data Science &amp; AI Engineering</p>
+  <p style="margin-top: 8px; font-size: 0.7rem;">🤖 Ask JARVIS (bottom-right or click the button above) about any project — tech stack, purpose, or key insights!</p>
+</footer>
+
+<!-- JARVIS AI Assistant Widget -->
+<div class="jarvis-widget">
+  <div class="jarvis-toggle" id="jarvisToggle">
+    <i class="fas fa-robot"></i>
+    <span class="jarvis-badge" id="jarvisBadge">1</span>
+  </div>
+  <div class="jarvis-chat-panel hidden" id="jarvisPanel">
+    <div class="jarvis-header">
+      <div class="jarvis-avatar"><i class="fas fa-microchip"></i></div>
+      <div class="jarvis-header-text">
+        <h4>JARVIS Assistant <span class="jarvis-online-dot"></span></h4>
+        <p>I know everything about Bothwell's projects</p>
+      </div>
+      <button class="jarvis-close-btn" id="jarvisCloseBtn" aria-label="Close chat"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="jarvis-messages" id="jarvisMessages">
+      <div class="message jarvis">
+        <i class="fas fa-circle-info" style="margin-right: 6px;"></i> Hi there! 👋 I'm JARVIS, your friendly AI assistant. I have complete knowledge of all 15 projects in Bothwell's portfolio.<br><br>
+        💡 <strong>Here's what I can help you with:</strong><br>
+        • Explain any project in detail<br>
+        • Share tech stack, purpose, and key insights<br>
+        • Explore advanced topics like NLP, deep learning, and ML<br>
+        • Find projects by category or technology<br>
+        • Share Bothwell's skills, background, or how to get in touch<br><br>
+        <strong>Try asking me things like:</strong><br>
+        "Explore advanced NLP techniques"<br>
+        "What deep learning projects are there?"<br>
+        "Tell me about the Recommender System"<br>
+        "Show me all Machine Learning projects"<br>
+        "How can I get in touch?"
+      </div>
+    </div>
+    <div class="jarvis-quick-replies" id="jarvisQuickReplies">
+      <button class="quick-chip" data-query="Show me all projects">📁 All Projects</button>
+      <button class="quick-chip" data-query="Recommend your best project">✨ Best Project</button>
+      <button class="quick-chip" data-query="What are Bothwell's skills?">🛠️ Skills</button>
+      <button class="quick-chip" data-query="How can I get in touch?">📬 Get in Touch</button>
+    </div>
+    <div class="jarvis-input-area">
+      <input type="text" id="jarvisInput" placeholder="Ask me anything about the projects...">
+      <button id="jarvisSendBtn"><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ============================================
+  // COMPLETE PROJECTS DATABASE - ALL 15 PROJECTS
+  // Updated with Google Colab links to avoid API rate limits
+  // ============================================
+  const projectsDatabase = [
+    {
+      name: "Food Delivery Analytics",
+      nameVariations: ["food delivery", "food delivery analytics", "case 1", "delivery analytics"],
+      description: "Comprehensive analysis of food delivery platform metrics including order patterns, peak hours, delivery time optimization, and operational efficiency.",
+      techStack: "Python, Pandas, NumPy, Matplotlib, Seaborn, Data Visualization",
+      purpose: "To optimize food delivery operations by identifying bottlenecks, peak demand periods, and efficiency improvement opportunities.",
+      keyInsights: "Identified peak delivery hours between 7-9 PM, discovered that 30% of delays occur due to restaurant prep time, recommended dynamic pricing strategy.",
+      link: "https://colab.research.google.com/github/bothwellishumba/Food-Delivery-Platform/blob/main/Case_1.ipynb?authuser=1",
+      category: "Data Analytics",
+      img: "Food Delivery.jpeg",
+      advancedTopics: ["time series", "demand forecasting", "operational analytics"]
+    },
+    {
+      name: "Food Delivery Case Study 2",
+      nameVariations: ["food delivery case study 2", "case study 2", "food delivery 2", "delivery case study"],
+      description: "Advanced analysis focusing on delivery times, customer satisfaction metrics, and route optimization strategies using geospatial data.",
+      techStack: "Python, Time Series, Geospatial, Folium, Scikit-learn",
+      purpose: "To improve delivery efficiency through route optimization and understand customer satisfaction drivers.",
+      keyInsights: "Route optimization can reduce delivery time by 22%, customer satisfaction strongly correlates with delivery time under 30 minutes.",
+      link: "https://colab.research.google.com/github/bothwellishumba/Food-Delivery-Platform/blob/main/Case%202.ipynb?authuser=1",
+      category: "Advanced Analytics",
+      img: "Food Delivery1.jpeg",
+      advancedTopics: ["geospatial analysis", "route optimization", "customer analytics"]
+    },
+    {
+      name: "ERP Migration Dashboard",
+      nameVariations: ["erp", "erp migration", "power bi dashboard", "migration dashboard"],
+      description: "Interactive Power BI visualization suite for tracking ERP migration progress, KPIs, and business process health monitoring.",
+      techStack: "Power BI, DAX, Data Modeling, ETL, Business Intelligence",
+      purpose: "To provide real-time visibility into ERP migration status and identify potential risks before they impact operations.",
+      keyInsights: "Dashboard reduced reporting time by 75%, identified 3 critical migration blockers early, saved estimated $200k in potential delays.",
+      link: "https://github.com/bothwellishumba/ERP-Migration-Power-BI-Project/blob/main/PowerBi%20Viz.pdf",
+      category: "Business Intelligence",
+      img: "ERP.jpg",
+      advancedTopics: ["business intelligence", "data visualization", "ETL pipelines"]
+    },
+    {
+      name: "eCommerce Intelligence",
+      nameVariations: ["ecommerce", "e-commerce", "rfm", "cohort analysis", "ecommerce intelligence"],
+      description: "Complete eCommerce analytics platform featuring RFM segmentation, cohort retention analysis, revenue forecasting, and interactive dashboards.",
+      techStack: "Python, Plotly, SQL, Pandas, Scikit-learn, Time Series",
+      purpose: "To drive eCommerce growth through data-driven customer insights and revenue optimization strategies.",
+      keyInsights: "RFM segmentation identified 15% high-value customers driving 60% revenue, retention campaigns improved customer lifetime value by 28%.",
+      link: "https://github.com/bothwellishumba/eCommerce-Analysis-",
+      category: "Machine Learning",
+      img: "Ecommerce.jpg",
+      advancedTopics: ["customer segmentation", "RFM analysis", "cohort analysis", "forecasting"]
+    },
+    {
+      name: "911 Calls Analytics",
+      nameVariations: ["911", "emergency calls", "911 calls", "call analytics"],
+      description: "Time-series clustering and geospatial analysis of emergency call patterns to optimize response strategies and resource allocation.",
+      techStack: "Pandas, Seaborn, Folium, Geospatial, Time Series",
+      purpose: "To help emergency services improve response times and allocate resources more effectively.",
+      keyInsights: "Identified high-call volume zones between 6-9 PM, recommended optimal dispatch locations, reduced average response distance by 18%.",
+      link: "https://colab.research.google.com/github/bothwellishumba/Python-Basics-For-Data-Science-Program/blob/main/911%20Calls%20Data.ipynb?authuser=1",
+      category: "Data Analytics",
+      img: "911 Calls.jpg",
+      advancedTopics: ["emergency response", "geospatial clustering", "time series"]
+    },
+    {
+      name: "Financial Risk Suite",
+      nameVariations: ["financial", "risk", "credit risk", "default prediction", "financial risk"],
+      description: "Credit default modeling and portfolio risk analytics using advanced machine learning methods including XGBoost with SHAP explanations.",
+      techStack: "Scikit-learn, XGBoost, SHAP, Pandas, NumPy, Finance",
+      purpose: "To help financial institutions predict default risk and optimize lending decisions.",
+      keyInsights: "XGBoost model achieved 89% accuracy in default prediction, SHAP analysis revealed income stability as top risk factor.",
+      link: "https://colab.research.google.com/github/bothwellishumba/Python-Basics-For-Data-Science-Program/blob/main/Finance%20Project.ipynb?authuser=1",
+      category: "Machine Learning",
+      img: "Finance.jpg",
+      advancedTopics: ["credit scoring", "risk modeling", "XGBoost", "SHAP"]
+    },
+    {
+      name: "SpaceX Launch Analytics",
+      nameVariations: ["spacex", "spacex launch", "rocket launch", "launch analytics"],
+      description: "Interactive exploratory data analysis identifying key success drivers for rocket launches including booster landing, payload mass, and weather conditions.",
+      techStack: "Matplotlib, Seaborn, Plotly, Pandas, Data Visualization",
+      purpose: "To understand what factors most influence SpaceX launch success rates.",
+      keyInsights: "Landing success is strongest predictor of mission success, payload mass under 5,000kg has 94% success rate.",
+      link: "https://colab.research.google.com/github/bothwellishumba/SpaceX-Capstone-Project-/blob/main/EDA%20with%20Visualization.ipynb?authuser=1",
+      category: "Data Science",
+      img: "SpaceX.jpg",
+      advancedTopics: ["EDA", "space analytics", "success prediction"]
+    },
+    {
+      name: "SpaceX SQL Analysis",
+      nameVariations: ["spacex sql", "sql analysis", "spacex sql analysis"],
+      description: "Advanced SQL-based exploratory analysis of SpaceX mission data, success rates, payload trends, and launch site performance.",
+      techStack: "SQL, PostgreSQL, Database Queries, Data Analysis",
+      purpose: "To demonstrate advanced SQL capabilities for space mission data analysis.",
+      keyInsights: "Complex joins revealed success rate correlation with launch site, window functions identified seasonal success patterns.",
+      link: "https://colab.research.google.com/github/bothwellishumba/SpaceX-Capstone-Project-/blob/main/EDA_WITH_SQL.ipynb?authuser=1",
+      category: "Data Engineering",
+      img: "SpaceX1.jpg",
+      advancedTopics: ["SQL", "database queries", "data engineering"]
+    },
+    {
+      name: "Regression Modeling",
+      nameVariations: ["regression", "linear regression", "ridge", "lasso", "regression modeling"],
+      description: "Predictive modeling using advanced regularization techniques including Ridge and Lasso regression with comprehensive feature engineering.",
+      techStack: "Statsmodels, Scikit-learn, Ridge, Lasso, Feature Engineering",
+      purpose: "To build accurate price prediction models with bias-variance tradeoff optimization.",
+      keyInsights: "Ridge regression outperformed Lasso with R² score of 0.87, feature engineering added 15% predictive power.",
+      link: "https://colab.research.google.com/github/bothwellishumba/Machine-Learning-Projects/blob/main/02-Linear%20Regression%20Project.ipynb?authuser=1",
+      category: "Machine Learning",
+      img: "Regression.png",
+      advancedTopics: ["regression", "regularization", "feature engineering"]
+    },
+    {
+      name: "Decision Trees & Random Forest",
+      nameVariations: ["decision tree", "random forest", "ensemble", "decision trees"],
+      description: "Ensemble learning for classification using Random Forest with hyperparameter tuning and SHAP values for model interpretability.",
+      techStack: "Random Forest, SHAP, GridSearchCV, Scikit-learn, XGBoost",
+      purpose: "To build high-accuracy classification models with explainable AI features.",
+      keyInsights: "Random Forest achieved 94% accuracy, SHAP identified top 3 features driving predictions.",
+      link: "https://colab.research.google.com/github/bothwellishumba/Machine-Learning-Projects/blob/main/Decision%20Trees%20and%20Random%20Forest%20Project.ipynb?authuser=1",
+      category: "Machine Learning",
+      img: "Decision Trees.jpg",
+      advancedTopics: ["ensemble learning", "random forest", "SHAP", "explainable AI"]
+    },
+    {
+      name: "K-Means Clustering",
+      nameVariations: ["kmeans", "k-means", "clustering", "customer segmentation"],
+      description: "Customer segmentation using K-Means clustering with PCA for dimensionality reduction and visualization.",
+      techStack: "K-Means, PCA, Scikit-learn, Matplotlib, Seaborn",
+      purpose: "To discover natural customer segments for targeted marketing and personalization.",
+      keyInsights: "Identified 5 distinct customer segments, PCA reduced 20 features to 3 components explaining 85% variance.",
+      link: "https://colab.research.google.com/github/bothwellishumba/Machine-Learning-Projects/blob/main/K%20Means%20Clustering%20Project.ipynb?authuser=1",
+      category: "Machine Learning",
+      img: "K Means Clustering.jpg",
+      advancedTopics: ["unsupervised learning", "clustering", "PCA", "dimensionality reduction"]
+    },
+    {
+      name: "NLP Sentiment Analysis",
+      nameVariations: ["nlp", "sentiment analysis", "natural language", "bert", "text analysis", "deep learning", "transformers"],
+      description: "Transformer-based sentiment analysis using BERT for customer feedback classification and opinion mining. This is a state-of-the-art deep learning project.",
+      techStack: "Hugging Face Transformers, BERT, PyTorch, NLTK, spaCy, Deep Learning",
+      purpose: "To automate customer feedback analysis and sentiment understanding at scale using advanced NLP techniques.",
+      keyInsights: "BERT model achieved 91% sentiment accuracy, fine-tuned on 10k samples, ready for real-time API deployment. This demonstrates practical application of transformer architectures.",
+      link: "https://colab.research.google.com/github/bothwellishumba/Machine-Learning-Projects/blob/main/NLP%20Project.ipynb?authuser=1",
+      category: "NLP / Deep Learning",
+      img: "NLP.png",
+      advancedTopics: ["NLP", "deep learning", "transformers", "BERT", "sentiment analysis", "fine-tuning", "attention mechanisms"]
+    },
+    {
+      name: "Principal Component Analysis",
+      nameVariations: ["pca", "principal component", "dimensionality reduction"],
+      description: "Principal Component Analysis for feature extraction, dimensionality reduction, and variance analysis on high-dimensional datasets.",
+      techStack: "PCA, Scikit-learn, NumPy, Matplotlib, Variance Analysis",
+      purpose: "To reduce feature space while preserving maximum information for visualization and model efficiency.",
+      keyInsights: "First 3 components captured 92% variance, reduced training time by 60% with minimal accuracy loss.",
+      link: "https://colab.research.google.com/github/bothwellishumba/Machine-Learning-Projects/blob/main/Principal%20Component%20Analysis.ipynb?authuser=1",
+      category: "Machine Learning",
+      img: "PCA.jpg",
+      advancedTopics: ["dimensionality reduction", "PCA", "feature extraction"]
+    },
+    {
+      name: "Recommender System",
+      nameVariations: ["recommender", "recommendation", "svd", "collaborative filtering"],
+      description: "Movie and product recommender system using collaborative filtering with matrix factorization techniques (SVD).",
+      techStack: "Surprise Library, Matrix Factorization, SVD, Python, Pandas",
+      purpose: "To provide personalized recommendations that increase user engagement and conversion.",
+      keyInsights: "SVD algorithm achieved RMSE of 0.87, cross-validation confirmed stability, recommended items show 32% higher click-through.",
+      link: "https://colab.research.google.com/github/bothwellishumba/Machine-Learning-Projects/blob/main/RECOMMENDER%20SYSTEM.ipynb?authuser=1",
+      category: "Machine Learning",
+      img: "Recomender System.png",
+      advancedTopics: ["recommender systems", "collaborative filtering", "matrix factorization", "SVD"]
+    },
+    {
+      name: "SVM Classification",
+      nameVariations: ["svm", "support vector machine", "svm classification", "kernel method"],
+      description: "Support Vector Machine classification with RBF kernel and hyperparameter optimization for high-accuracy predictions.",
+      techStack: "SVM, Scikit-learn, GridSearchCV, Kernel Methods, Python",
+      purpose: "To build robust classifiers that maximize margin between classes for optimal generalization.",
+      keyInsights: "RBF kernel with tuned C=1.0 achieved 96% accuracy, optimal gamma=0.1 for balanced margin.",
+      link: "https://colab.research.google.com/github/bothwellishumba/Machine-Learning-Projects/blob/main/Support%20Vector%20Machines%20Project.ipynb?authuser=1",
+      category: "Machine Learning",
+      img: "SVM.jpg",
+      advancedTopics: ["SVM", "kernel methods", "classification", "hyperparameter tuning"]
+    }
+  ];
+
+  var currentCategoryFilter = 'All';
+
+  function renderProjects(filterCategory) {
+    const container = document.getElementById('projectsGrid');
+    if (!container) return;
+    var activeFilter = filterCategory || currentCategoryFilter || 'All';
+    container.innerHTML = '';
+    var list = activeFilter === 'All' ? projectsDatabase : projectsDatabase.filter(function(p) { return p.category === activeFilter; });
+
+    if (list.length === 0) {
+      container.innerHTML = '<div class="loader-container" style="grid-column:1/-1;"><i class="fas fa-folder-open" style="font-size: 2.5rem; color: var(--blue-corporate);"></i><p>No projects in this category yet.</p></div>';
+      return;
+    }
+
+    list.forEach(proj => {
+      const card = document.createElement('div');
+      card.className = 'project-card';
+      card.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.open(proj.link, '_blank');
+      });
+
+      const imgWrap = document.createElement('div');
+      imgWrap.className = 'project-img-wrap';
+
+      const img = document.createElement('img');
+      img.src = proj.img;
+      img.alt = proj.name;
+      img.className = 'project-img';
+      img.onerror = function() {
+        this.src = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=400&q=80';
+      };
+
+      const badge = document.createElement('span');
+      badge.className = 'project-category-badge';
+      badge.textContent = proj.category;
+
+      const overlay = document.createElement('div');
+      overlay.className = 'project-view-overlay';
+      overlay.innerHTML = '<span class="project-view-cta">View Project <i class="fas fa-arrow-up-right-from-square"></i></span>';
+
+      imgWrap.appendChild(img);
+      imgWrap.appendChild(badge);
+      imgWrap.appendChild(overlay);
+
+      const content = document.createElement('div');
+      content.className = 'project-content';
+      content.innerHTML = '<div class="project-title"><i class="fas fa-chart-simple"></i> ' + escapeHtml(proj.name) + '</div><div class="project-desc">' + escapeHtml(proj.description.substring(0, 100)) + '...</div><div class="project-tech"><i class="fas fa-code-branch"></i> ' + escapeHtml(proj.techStack.split(',')[0]) + '</div>';
+
+      card.appendChild(imgWrap);
+      card.appendChild(content);
+      container.appendChild(card);
+    });
+  }
+
+  function renderFilterPills() {
+    const container = document.getElementById('filterPills');
+    if (!container) return;
+    var categories = ['All'];
+    projectsDatabase.forEach(function(p) {
+      if (categories.indexOf(p.category) === -1) categories.push(p.category);
+    });
+    container.innerHTML = '';
+    categories.forEach(function(cat) {
+      const pill = document.createElement('button');
+      pill.className = 'filter-pill' + (cat === currentCategoryFilter ? ' active' : '');
+      pill.textContent = cat;
+      pill.addEventListener('click', function() {
+        currentCategoryFilter = cat;
+        container.querySelectorAll('.filter-pill').forEach(function(p) { p.classList.remove('active'); });
+        pill.classList.add('active');
+        renderProjects(cat);
+      });
+      container.appendChild(pill);
+    });
+  }
+
+  function renderSkillsStrip() {
+    const container = document.getElementById('skillsStrip');
+    if (!container) return;
+    var skillSet = {};
+    projectsDatabase.forEach(function(proj) {
+      proj.techStack.split(',').forEach(function(t) {
+        var clean = t.trim();
+        if (clean) skillSet[clean] = true;
+      });
+    });
+    var skills = Object.keys(skillSet).sort();
+    container.innerHTML = skills.map(function(s) { return '<span class="skill-chip">' + escapeHtml(s) + '</span>'; }).join('');
+  }
+
+  // ============================================
+  // MEDIUM POSTS FETCHER - Fixed to avoid rate limits
+  // ============================================
+  let allMediumPosts = [];
+  let currentPage = 1;
+  var postsPerPage = 6;
+
+  function fetchMediumPosts() {
+    var container = document.getElementById('mediumFeedContainer');
+    var username = 'bothwellishumba';
+
+    container.innerHTML = '<div class="loader-container" style="grid-column:1/-1;"><i class="fab fa-medium" style="font-size: 3rem; color: #0066cc;"></i><p>📝 Visit <a href="https://bothwellishumba.medium.com" target="_blank" style="color: #0066cc;">bothwellishumba.medium.com</a> for all articles</p><p style="font-size: 0.8rem; margin-top: 8px;">✨ Latest thoughts on data science, AI, and analytics ✨</p></div>';
+  }
+
+  function renderMediumPosts() {
+    var container = document.getElementById('mediumFeedContainer');
+    if (container && allMediumPosts.length === 0) {
+      container.innerHTML = '<div class="loader-container" style="grid-column:1/-1;"><i class="fab fa-medium" style="font-size: 3rem; color: #0066cc;"></i><p>📝 Visit <a href="https://bothwellishumba.medium.com" target="_blank" style="color: #0066cc;">bothwellishumba.medium.com</a> for all articles</p><p style="font-size: 0.8rem; margin-top: 8px;">✨ Latest thoughts on data science, AI, and analytics ✨</p></div>';
+    }
+  }
+
+  // ============================================
+  // JARVIS - ENHANCED CONVERSATIONAL AI
+  // ============================================
+  var jarvisMessages = document.getElementById('jarvisMessages');
+  var jarvisInput = document.getElementById('jarvisInput');
+  var jarvisSendBtn = document.getElementById('jarvisSendBtn');
+  var jarvisToggle = document.getElementById('jarvisToggle');
+  var jarvisPanel = document.getElementById('jarvisPanel');
+  var openJarvisBtn = document.getElementById('openJarvisBtn');
+  var jarvisCloseBtn = document.getElementById('jarvisCloseBtn');
+  var jarvisBadge = document.getElementById('jarvisBadge');
+  var jarvisQuickReplies = document.getElementById('jarvisQuickReplies');
+
+  function openJarvis() {
+    jarvisPanel.classList.remove('hidden');
+    jarvisBadge.classList.remove('show');
+    jarvisInput.focus();
+  }
+  function closeJarvis() {
+    jarvisPanel.classList.add('hidden');
+  }
+
+  openJarvisBtn.addEventListener('click', openJarvis);
+
+  jarvisToggle.addEventListener('click', function() {
+    if (jarvisPanel.classList.contains('hidden')) { openJarvis(); } else { closeJarvis(); }
+  });
+
+  jarvisCloseBtn.addEventListener('click', closeJarvis);
+
+  // Draw attention to JARVIS a few seconds after page load, if not yet opened
+  setTimeout(function() {
+    if (jarvisPanel.classList.contains('hidden')) {
+      jarvisBadge.classList.add('show');
+    }
+  }, 4000);
+
+  if (jarvisQuickReplies) {
+    jarvisQuickReplies.querySelectorAll('.quick-chip').forEach(function(chip) {
+      chip.addEventListener('click', function() {
+        jarvisInput.value = chip.getAttribute('data-query');
+        processQuery();
+      });
+    });
+  }
+
+  function formatJarvisText(text) {
+    var escaped = escapeHtml(text);
+    escaped = escaped.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    return escaped;
+  }
+
+  function addMessage(text, isUser) {
+    var row = document.createElement('div');
+    row.className = 'message-row ' + (isUser ? 'user' : 'jarvis');
+
+    var avatar = document.createElement('div');
+    avatar.className = 'msg-avatar ' + (isUser ? 'user' : 'jarvis');
+    avatar.innerHTML = isUser ? '<i class="fas fa-user"></i>' : '<i class="fas fa-robot"></i>';
+
+    var msgDiv = document.createElement('div');
+    msgDiv.className = 'message ' + (isUser ? 'user' : 'jarvis');
+    msgDiv.innerHTML = isUser ? escapeHtml(text) : formatJarvisText(text);
+
+    row.appendChild(avatar);
+    row.appendChild(msgDiv);
+    jarvisMessages.appendChild(row);
+    jarvisMessages.scrollTop = jarvisMessages.scrollHeight;
+  }
+
+  function showTyping() {
+    var typing = document.createElement('div');
+    typing.className = 'typing-indicator';
+    typing.id = 'jarvisTyping';
+    typing.innerHTML = '<span></span><span></span><span></span>';
+    jarvisMessages.appendChild(typing);
+    jarvisMessages.scrollTop = jarvisMessages.scrollHeight;
+  }
+
+  function removeTyping() { var t = document.getElementById('jarvisTyping'); if (t) t.remove(); }
+
+  function findMatchingProjects(query) {
+    var lowerQuery = query.toLowerCase();
+    var matches = [];
+
+    for (var i = 0; i < projectsDatabase.length; i++) {
+      var proj = projectsDatabase[i];
+      var score = 0;
+
+      if (lowerQuery.indexOf(proj.name.toLowerCase()) !== -1) score += 100;
+      for (var j = 0; j < proj.nameVariations.length; j++) {
+        if (lowerQuery.indexOf(proj.nameVariations[j].toLowerCase()) !== -1) score += 80;
+      }
+      if (lowerQuery.indexOf(proj.category.toLowerCase()) !== -1) score += 50;
+
+      var techWords = proj.techStack.toLowerCase().split(/[, ]+/);
+      for (var k = 0; k < techWords.length; k++) {
+        if (techWords[k].length > 3 && lowerQuery.indexOf(techWords[k]) !== -1) score += 20;
+      }
+
+      if (proj.advancedTopics) {
+        for (var l = 0; l < proj.advancedTopics.length; l++) {
+          if (lowerQuery.indexOf(proj.advancedTopics[l].toLowerCase()) !== -1) score += 35;
+        }
+      }
+
+      if (score > 0) matches.push({ project: proj, score: score });
+    }
+
+    matches.sort(function(a, b) { return b.score - a.score; });
+    return matches;
+  }
+
+  function getJarvisResponse(userMsg) {
+    var lower = userMsg.toLowerCase().trim();
+
+    // Greetings
+    if (lower.match(/^(hi|hello|hey|greetings|good morning|good afternoon|sup|yo|jarvis|hey jarvis)$/i)) {
+      return "Hey there! 👋 Great to see you! I'm JARVIS, your AI assistant for Bothwell's portfolio. I know everything about all 15 projects here. What would you like to explore today? Need a recommendation?";
+    }
+
+    if (lower.match(/how are you|how are you doing|how's it going|you doing/i)) {
+      return "I'm doing fantastic, thank you for asking! 💙 I'm fully charged and ready to help you explore Bothwell's amazing data science projects. How can I assist you today?";
+    }
+
+    if (lower.match(/thank|thanks|appreciate|good job|great work/i)) {
+      return "You're very welcome! 😊 I'm glad I could help. Feel free to ask me anything else about the projects or explore more topics. What else would you like to know?";
+    }
+
+    if (lower.match(/goodbye|bye|see you|farewell|exit|quit/i)) {
+      return "It was a pleasure chatting with you! 👋 Feel free to come back anytime you have questions about Bothwell's portfolio. Have a great day! 💙";
+    }
+
+    // List all projects
+    if (lower.match(/list all|show all|all projects|what projects|project list|show me projects/i)) {
+      var projectList = '';
+      for (var i = 0; i < projectsDatabase.length; i++) {
+        projectList += (i+1) + '. **' + projectsDatabase[i].name + '** (' + projectsDatabase[i].category + ')\n\n';
+      }
+      return '📁 I have ' + projectsDatabase.length + ' fantastic projects in Bothwell\'s portfolio:\n\n' + projectList + '\nWhich one catches your interest? I can tell you about its tech stack, purpose, or key insights! 🚀';
+    }
+
+    // Category filtering
+    var categoryMap = {
+      'machine learning': ['machine learning', 'ml', 'ml projects', 'machine learning projects'],
+      'data analytics': ['data analytics', 'analytics', 'data analysis', 'analytics projects'],
+      'business intelligence': ['business intelligence', 'bi', 'power bi', 'dashboard'],
+      'nlp': ['nlp', 'natural language', 'sentiment', 'text analysis', 'deep learning'],
+      'data science': ['data science', 'science projects'],
+      'data engineering': ['data engineering', 'engineering', 'sql']
+    };
+
+    for (var cat in categoryMap) {
+      if (categoryMap.hasOwnProperty(cat)) {
+        var keywords = categoryMap[cat];
+        var found = false;
+        for (var m = 0; m < keywords.length; m++) {
+          if (lower.indexOf(keywords[m]) !== -1) found = true;
+        }
+        if (found) {
+          var filtered = [];
+          for (var n = 0; n < projectsDatabase.length; n++) {
+            if (projectsDatabase[n].category.toLowerCase().indexOf(cat.toLowerCase()) !== -1 || projectsDatabase[n].category.toLowerCase() === cat.toLowerCase()) {
+              filtered.push(projectsDatabase[n]);
+            }
+          }
+          if (filtered.length > 0) {
+            var projectsList = '';
+            for (var o = 0; o < filtered.length; o++) {
+              projectsList += '• **' + filtered[o].name + '**\n';
+            }
+            return '📂 Great choice! Here are the ' + cat + ' projects in the portfolio:\n\n' + projectsList + '\n\nWould you like me to explain any of these in detail? Just ask! 💡';
+          }
+        }
+      }
+    }
+
+    // Recommend a project
+    if (lower.match(/recommend|best project|most impressive|favorite project|which project should|suggest a project|start with which/i)) {
+      var recProject = null;
+      for (var r = 0; r < projectsDatabase.length; r++) {
+        if (projectsDatabase[r].name === "NLP Sentiment Analysis") { recProject = projectsDatabase[r]; break; }
+      }
+      if (!recProject) recProject = projectsDatabase[0];
+      return '✨ **My top pick: ' + recProject.name + '**\n\n' + recProject.description + '\n\n💡 **Why it stands out:** ' + recProject.keyInsights + '\n\n🔧 **Tech Stack:** ' + recProject.techStack + '\n\nWant something in a different category — Machine Learning, Business Intelligence, or Data Analytics? Just ask! 🚀';
+    }
+
+    // Skills summary across all projects
+    if (lower.match(/skills|what can bothwell do|tech stack overview|technologies does bothwell|what tools does bothwell/i)) {
+      var skillSet = {};
+      for (var s = 0; s < projectsDatabase.length; s++) {
+        var techs = projectsDatabase[s].techStack.split(',');
+        for (var t = 0; t < techs.length; t++) {
+          var clean = techs[t].trim();
+          if (clean) skillSet[clean] = true;
+        }
+      }
+      var skillList = Object.keys(skillSet).sort();
+      return '🛠️ **Bothwell\'s Technical Toolkit**\n\nAcross ' + projectsDatabase.length + ' projects, Bothwell has hands-on experience with:\n\n' + skillList.map(function(sk){ return '• ' + sk; }).join('\n') + '\n\nWant to see these in action? Ask about a specific project or category! 🚀';
+    }
+
+    // Bio / background
+    if (lower.match(/who is bothwell|about bothwell|background|tell me about yourself|tell me about bothwell|bio\b/i)) {
+      return '👋 **About Bothwell I. Shumba**\n\nBothwell is a Data Scientist & AI Engineer with enterprise experience building production-grade ML systems, analytical dashboards, and AI-driven strategies that deliver measurable business outcomes. He\'s based in Doha, Qatar, and has delivered ' + projectsDatabase.length + ' projects spanning Machine Learning, NLP, Business Intelligence, and Data Engineering.\n\nWant to see his work, skills, or how to get in touch? 💙';
+    }
+
+    // Get in touch / contact
+    if (lower.match(/get in touch|contact bothwell|email bothwell|reach bothwell|connect with bothwell|how do i contact|say hello|send a message|reach out/i)) {
+      return '📬 **Let\'s connect!**\n\nHere\'s the best way to reach Bothwell:\n\n📧 bothwell.i.shumba@gmail.com\n📞 +974 33389634\n🌍 Doha, Qatar\n\nYou can also hit the **"Send a message"** button in the Contact section, or the **"Reach out"** button up top — both open a pre-filled email. 🚀';
+    }
+
+    // CV / Resume
+    if (lower.match(/\bcv\b|resume|curriculum vitae/i)) {
+      return '📄 To request Bothwell\'s CV, just click the **"Request for CV"** button in the hero section, or email him directly at bothwell.i.shumba@gmail.com — he\'ll be happy to share it!';
+    }
+
+    // Advanced topic exploration
+    if (lower.match(/explore.*nlp|nlp.*technique|advanced nlp|natural language processing|deep dive.*nlp|how does nlp work|nlp project/i)) {
+      var nlpProject = null;
+      for (var p = 0; p < projectsDatabase.length; p++) {
+        if (projectsDatabase[p].name === "NLP Sentiment Analysis") {
+          nlpProject = projectsDatabase[p];
+          break;
+        }
+      }
+      if (nlpProject) {
+        return '🧠 **Exploring Advanced NLP with BERT!**\n\n' + nlpProject.name + ' is a state-of-the-art deep learning project that uses Google\'s BERT transformer architecture for sentiment analysis.\n\n🔬 **Key Advanced Concepts:**\n• Transformer Architecture & Attention Mechanisms\n• Fine-tuning pre-trained BERT models\n• Tokenization with WordPiece\n• Transfer Learning for text classification\n\n📊 **Results:** ' + nlpProject.keyInsights + '\n\n🛠️ **Tech Stack:** ' + nlpProject.techStack + '\n\nWould you like me to explain how transformers work, or explore other deep learning projects?';
+      }
+    }
+
+    // Specific project matching
+    var matches = findMatchingProjects(userMsg);
+
+    if (matches.length > 0) {
+      var bestMatch = matches[0].project;
+
+      if (lower.indexOf("tech stack") !== -1 || lower.indexOf("technology") !== -1 || lower.indexOf("tools") !== -1 || lower.indexOf("libraries") !== -1) {
+        return '🔧 **' + bestMatch.name + ' - Technology Stack**\n\n' + bestMatch.techStack + '\n\nThese technologies work together to solve real-world problems. Want to learn about the project\'s purpose or key discoveries? 🚀';
+      }
+
+      if (lower.indexOf("purpose") !== -1 || lower.indexOf("goal") !== -1 || lower.indexOf("objective") !== -1 || lower.indexOf("why") !== -1 || lower.indexOf("what does it do") !== -1) {
+        return '🎯 **' + bestMatch.name + ' - Purpose & Goal**\n\n' + bestMatch.purpose + '\n\nThis drives the entire analysis. Would you like to see the key insights discovered or the tech stack used?';
+      }
+
+      if (lower.indexOf("insight") !== -1 || lower.indexOf("result") !== -1 || lower.indexOf("outcome") !== -1 || lower.indexOf("learn") !== -1 || lower.indexOf("discover") !== -1) {
+        return '💡 **' + bestMatch.name + ' - Key Insights**\n\n' + bestMatch.keyInsights + '\n\nThese findings demonstrate real business impact! Want to explore similar projects or learn about the technology behind it?';
+      }
+
+      return '✨ **' + bestMatch.name + '**\n\n📝 **Description:** ' + bestMatch.description + '\n\n🔧 **Tech Stack:** ' + bestMatch.techStack + '\n\n🎯 **Purpose:** ' + bestMatch.purpose + '\n\n💡 **Key Insights:** ' + bestMatch.keyInsights + '\n\n📊 **Category:** ' + bestMatch.category + '\n\nWould you like to dive deeper into any aspect of this project? I\'m here to help! 💙';
+    }
+
+    // Fallback response
+    return 'I have detailed knowledge of all ' + projectsDatabase.length + ' projects — plus Bothwell\'s skills, background, and how to get in touch. Could you try asking me something like:\n\n• "Tell me about the Recommender System"\n• "Recommend your best project" ✨\n• "What are Bothwell\'s skills?" 🛠️\n• "How can I get in touch?" 📬\n• "Show me all Machine Learning projects"\n\nI\'m excited to help you explore! 💙';
+  }
+
+  function processQuery() {
+    var query = jarvisInput.value.trim();
+    if (!query) return;
+    addMessage(query, true);
+    jarvisInput.value = '';
+    showTyping();
+    setTimeout(function() {
+      removeTyping();
+      var response = getJarvisResponse(query);
+      addMessage(response, false);
+    }, 600);
+  }
+
+  jarvisSendBtn.addEventListener('click', processQuery);
+  jarvisInput.addEventListener('keypress', function(e) { if (e.key === 'Enter') processQuery(); });
+
+  function escapeHtml(str) { if(!str) return ''; return str.replace(/[&<>]/g, function(m) { return m === '&' ? '&amp;' : m === '<' ? '&lt;' : '&gt;'; }); }
+  function sendEmail() { window.location.href = "mailto:bothwell.i.shumba@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Bothwell%2C"; }
+
+  document.getElementById('ribbonEmailBtn').addEventListener('click', sendEmail);
+  document.getElementById('mainEmailBtn').addEventListener('click', sendEmail);
+
+  var githubLink = document.querySelector('.btn-outline[href*="github.com"]');
+  if (githubLink) githubLink.setAttribute('href', 'https://github.com/bothwellishumba');
+
+  renderFilterPills();
+  renderSkillsStrip();
+  renderProjects();
+  (function renderHeroStats() {
+    var el = document.getElementById('heroStats');
+    if (!el) return;
+    var categories = {};
+    projectsDatabase.forEach(function(p) { categories[p.category] = true; });
+    var stats = [
+      { num: projectsDatabase.length + '+', label: 'Projects Delivered' },
+      { num: Object.keys(categories).length, label: 'Specialty Domains' },
+      { num: 'Enterprise', label: 'Grade Systems' }
+    ];
+    el.innerHTML = stats.map(function(s) {
+      return '<div><div class="hero-stat-num">' + s.num + '</div><div class="hero-stat-label">' + s.label + '</div></div>';
+    }).join('');
+  })();
+  fetchMediumPosts();
+
+  // Request for CV button handler
+  document.getElementById('requestCvBtn').addEventListener('click', function(e) {
+    e.preventDefault();
+    alert('📄 Please send an email to bothwell.i.shumba@gmail.com requesting the CV. I\'ll be happy to share it with you!');
+  });
+
+  // ============================================
+  // VISUAL POLISH (non-functional enhancements)
+  // ============================================
+  // Fade-in-on-scroll for sections
+  if ('IntersectionObserver' in window) {
+    var revealObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(function(el) { revealObserver.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('in-view'); });
+  }
+
+  // Subtle shadow on navbar once the page is scrolled
+  var navbarEl = document.querySelector('.navbar');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 8) {
+      navbarEl.classList.add('scrolled');
+    } else {
+      navbarEl.classList.remove('scrolled');
+    }
+  });
+</script>
+</body>
+</html>
